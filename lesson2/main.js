@@ -194,7 +194,7 @@ if (!!y == false){
 //     - з файлу arrays.js (лежить в папці 2023 plan) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання.
 //     У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
 
-console.log('-------------Task6: Логічні розгалуження-------------');
+console.log('-------------Task7: Логічні розгалуження-------------');
 let coursesAndDurationArray = [
     {title: 'JavaScript Complex', monthDuration: 5},
     {title: 'Java Complex', monthDuration: 6},
