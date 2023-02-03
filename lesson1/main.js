@@ -32,11 +32,11 @@ console.log(typeof a);
 console.log(typeof b);
 console.log(typeof c);
 
-// Додаткове для тих хто цікавився prompt`oм
-// - За допомогою 3х різних prompt() отримати 3 слова які являються вашими Імям, По-Батькові та роками. та вивести в консоль
+// Додаткове для тих хто цікавився prompt'om
+// - За допомогою 3 х різних prompt() отримати 3 слова які являються вашими Ім'ям, По батькові та роками. та вивести в консоль
 console.log('-------------Task4-------------')
 let name = prompt('Your name:');
-console.log('Ваше імя ' + name);
+console.log('Ваше ім\'я ' + name);
 let middleN = prompt('Your middle name:');
 console.log('По-батькові ' + middleN);
 let years = prompt('How old are you:');
