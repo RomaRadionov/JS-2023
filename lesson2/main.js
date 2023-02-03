@@ -64,7 +64,7 @@ let book6 = {
     genre: 'Biographies and memoirs',
     authors:{
         name: 'Боріс Джонсон',
-    age: 55}
+    age: 58}
 }
 console.log(book6);
 // - Створити масив з 10 об'єктами які описують сутність "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
