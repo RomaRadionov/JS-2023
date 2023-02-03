@@ -49,14 +49,18 @@ let book4 = {
         age: 55}
 }
 console.log(book4);
+
 let book5 = {
     title: 'Іди туди, де страшно. І отримаєш те, про що мрієш',
     pageCount: 234,
     genre: 'psychology',
-    authors:{
-        name: 'Дж. Ловлесс',
-        age: 55}
+    authors:[
+        {name: 'Дж. Ловлесс', age: 55},
+        {name: 'Боріс Джонсон',age: 58},
+        {name: 'Сунь-цзи',age: 55}
+    ]
 }
+
 console.log(book5);
 let book6 = {
     title: 'Фактор Черчилля. Як одна людина змінила історію',
@@ -64,7 +68,7 @@ let book6 = {
     genre: 'Biographies and memoirs',
     authors:{
         name: 'Боріс Джонсон',
-    age: 58}
+        age: 58}
 }
 console.log(book6);
 // - Створити масив з 10 об'єктами які описують сутність "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
