@@ -68,18 +68,21 @@ li:hover>:not(:hover){
 }
 
 .btn{
+    width: 60%;
     display: block;
     padding: 5px;
-    margin: 5px;
+    margin: 10px auto;
     text-align: center;
     border: 2px solid #4cd964;
     border-radius: 8px;
     cursor: pointer;
+    background: transparent;
+    color: wheat;
 }
 
 .modal-active{
     position: absolute;
     width: 400px;
     height: 300px;
-    background: black;
+    background: #cc6161;
 }
