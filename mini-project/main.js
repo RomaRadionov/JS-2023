@@ -15,7 +15,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 <!--                    <a href="user-details.html" onclick="getUserDetails(${item.id})" id="${item.id}" class="btn" target="_blank">More...</a>-->
                     <button class="btn" onclick="getUserDetails(${item.id})" id="${item.id}">More...</button>
                 `;
-                // console.log(Object.keys(item));
+                console.log(Object.keys(item));
                 // console.log(item);
             }
             for (const item of value){
@@ -41,8 +41,9 @@ function getUserDetails (id) {
                     modal.innerHTML = `
                     <div class="modal-main active" id="modal__delete">
                         <div class="modal-main__content" onclick="closeModalDeleteWindow()">
-                            <p class="modal-main__title">${item.id}</p>
                             <button class="modal-main__close" id="delete" onclick="closeModalDeleteWindow()">&times;</button>
+                            <h3 class="modal-main__title">${item.id}) ${item.name}</h3>
+                            <p>${item.name}</p>
                         </div>
                     </div>
                     `;
