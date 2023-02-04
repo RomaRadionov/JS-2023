@@ -40,8 +40,8 @@ function getUserDetails (id) {
                 if (id == item.id){
                     modal.innerHTML = `
                     <div class="modal">
-                        <div class="modal-main" onclick="closeModalDeleteWindow()">
-                            <button class="modal-main-close" id="delete" onclick="closeModalDeleteWindow()">&times;</button>
+                        <div class="modal-main">
+                            <button class="modal-main-close" id="delete" onclick="closeModalDeleteWindow()"><i class="fa-solid fa-chevron-left"></i></button>
                             <div class="modal-item">
                                 <p class="modal-main-title">${item.id}) ${item.name}</p>
                             </div>
@@ -76,6 +76,10 @@ function getUserDetails (id) {
                 }
             }
         })
+}
+
+const closeModalDeleteWindow = () => {
+    modal.innerHTML = '';
 }
 
 // На странице user-details.html:
