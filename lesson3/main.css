@@ -1,0 +1,28 @@
+.wrap{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 30px auto;
+    background: black;
+    border-radius: 8px;
+    color: white;
+}
+
+.wrap img{
+    width: 60%;
+}
+
+.product-card{
+    width: 80%;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
+p{
+    margin: 10px;
+}
