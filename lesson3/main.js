@@ -112,7 +112,7 @@ let users = [
 //     - користувачів зі статусом true
 // - користувачів зі статусом false
 // - користувачів які старші за 30 років
-document.write(`<div><ul>- користувачі зі статусом true</div>`)
+document.write(`<div><ul>- користувачі зі статусом true`)
 for (const user of users) {
     if (user.status == true)
         document.write(`<li>${user.name}</li>`)
@@ -120,7 +120,7 @@ for (const user of users) {
 document.write(`</ul></div>`)
 
 
-document.write(`<div><ul>- користувачі зі статусом false</div>`)
+document.write(`<div><ul>- користувачі зі статусом false`)
 for (const user of users) {
     if (user.status == false)
         document.write(`<li>${user.name}</li>`)
@@ -128,7 +128,7 @@ for (const user of users) {
 document.write(`</ul></div>`)
 
 
-document.write(`<div><ul>- користувачі які старші за 30 років</div>`)
+document.write(`<div><ul>- користувачі які старші за 30 років`)
 for (const user of users) {
     if (user.age > 30)
         document.write(`<li>${user.name}</li>`)
