@@ -152,7 +152,6 @@ for (let j = 0; j < arr7.length; j++) {
 console.log('-------------Task8-additional-1: Цикли-------------')
 // - Створити масив з 10 елементів числового, стрічкового і булевого типу. За допомогою if та typeof вивести тільки числові елементи
 for (let j = 0; j < arr7.length; j++) {
-    // console.log(typeof arr7[j])
     if (typeof arr7[j] == 'number') {
         console.log(`${[j]} - ${arr7[j]}`)
     }
@@ -160,7 +159,6 @@ for (let j = 0; j < arr7.length; j++) {
 console.log('-------------Task9-additional-1: Цикли-------------')
 // - Створити масив з 10 елементів числового, стрічкового і булевого типу. За допомогою if та typeof вивести тільки рядкові елементи
 for (let j = 0; j < arr7.length; j++) {
-    // console.log(typeof arr7[j])
     if (typeof arr7[j] == 'string') {
         console.log(`${[j]} - ${arr7[j]}`)
     }
