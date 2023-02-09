@@ -4,15 +4,26 @@ console.log('-------------Task1-additional-1: Цикли-------------')
 // - з 5 стрічкових значень
 // - з 5 значень стрічкового, числового та булевого типу
 // - та вивести його в консоль
-let arr = [62, 567, 436, 98, 55, "st1", "st2", "st3", "st4", "st5", true, false];
-for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-}
+let arrNumber = [62, 567, 436, 98, 55];
+let arrString = ["st1", "st2", "st3", "st4", "st5"];
+let arrAll = [true, 435, 'st1', false, 35, -2];
+console.log(arrNumber);
+console.log(arrString);
+console.log(arrAll);
 
 console.log('-------------Task2-additional-1: Цикли-------------')
 // -- Створити пустий масив. Наповнити його будь-якими значеннями звертаючись до конкретного індексу. Вивести в консоль
 let arr2 = [];
-
+arr2[0] = 56;
+arr2[1] = 'st44';
+arr2[2] = true;
+arr2[3] = undefined;
+arr2[4] = false;
+arr2[5] = 'sfs345';
+arr2[6] = {name: 'Martin', age: 76};
+arr2[7] = [43, 'st67', true];
+arr2[8] = 564465345;
+console.log(arr2);
 console.log('-------------Task3-additional-1: Цикли-------------')
 // - є масив [2,17,13,6,22,31,45,66,100,-18] :
 console.log('1. перебрати його циклом while')
@@ -165,14 +176,28 @@ for (let j = 0; j < arr7.length; j++) {
 }
 console.log('-------------Task10-additional-1: Цикли-------------')
 // - Створити порожній масив. Наповнити його 10 елементами (різними за типами) через звернення до конкретних індексів. Вивести в консоль всі його елементи в циклі.
+let  arr8 = [];
+arr8[0] = true;
+arr8[1] = {name: 'Vasya', age: 35};
+arr8[2] = 353598;
+arr8[3] = 3.2;
+arr8[4] = false;
+arr8[5] = [6, 4, 'd', 'st'];
+arr8[6] = 'st765';
+arr8[7] = 0;
+arr8[8] = -1257;
+arr8[9] = null;
+for (const arr8Element of arr8) {
+    console.log(arr8Element);
+}
 console.log('-------------Task11-additional-1: Цикли-------------')
 // - Створити цикл for на 10 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
 // for (let i = 0; i < 10; i++) {
 //     console.log(`${i}`);
 //     document.write(`${i} `)
 // }
-// - Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
 console.log('-------------Task11-additional-1: Цикли-------------')
+// - Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
 // for (let i = 0; i < 100; i++) {
 //     console.log(`${i}`);
 //     document.write(`${i} `)
@@ -191,8 +216,8 @@ console.log('-------------Task13-additional-1: Цикли-------------')
 //         document.write(`${i} `);
 //     }
 // }
-// - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
 console.log('-------------Task14-additional-1: Цикли-------------')
+// - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
 // for (let i = 0; i < 100; i++) {
 //     if (i % 2 != 0) {
 //         console.log(`${i}`);
