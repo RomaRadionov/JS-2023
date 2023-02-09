@@ -142,7 +142,7 @@ console.log('-------------Task7-additional-1: Цикли-------------')
 // - Створити масив з 10 елементів числового, стрічкового і булевого типу. За допомогою if та typeof вивести тільки булеві елементи
 let arr7 = [89, true, 'st', 9896234, false, 'st57', 2345, true, 'st45676', 435464];
 for (let j = 0; j < arr7.length; j++) {
-    if (typeof arr7[j] == 'boolean'){
+    if (typeof arr7[j] == 'boolean') {
         console.log(`${[j]} - ${arr7[j]}`)
     }
     // if (arr7[j] === true || arr7[j] === false) {
@@ -163,19 +163,153 @@ for (let j = 0; j < arr7.length; j++) {
         console.log(`${[j]} - ${arr7[j]}`)
     }
 }
-//
+console.log('-------------Task10-additional-1: Цикли-------------')
 // - Створити порожній масив. Наповнити його 10 елементами (різними за типами) через звернення до конкретних індексів. Вивести в консоль всі його елементи в циклі.
+console.log('-------------Task11-additional-1: Цикли-------------')
 // - Створити цикл for на 10 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+// for (let i = 0; i < 10; i++) {
+//     console.log(`${i}`);
+//     document.write(`${i} `)
+// }
 // - Створити цикл for на 100 ітерацій з кроком 1. Вивести поточний номер кроку через console.log та document.write
+console.log('-------------Task11-additional-1: Цикли-------------')
+// for (let i = 0; i < 100; i++) {
+//     console.log(`${i}`);
+//     document.write(`${i} `)
+// }
+console.log('-------------Task12-additional-1: Цикли-------------')
 // - Створити цикл for на 100 ітерацій з кроком 2. Вивести поточний номер кроку через console.log та document.write
+// for (let i = 0; i < 100; i+=2) {
+//     console.log(`${i}`);
+//     document.write(`${i} `)
+// }
+console.log('-------------Task13-additional-1: Цикли-------------')
 // - Створити цикл for на 100 ітерацій. Вивести тільки парні кроки. через console.log + document.write
+// for (let i = 0; i < 100; i++) {
+//     if (i % 2 == 0) {
+//         console.log(`${i}`);
+//         document.write(`${i} `);
+//     }
+// }
 // - Створити цикл for на 100 ітерацій. Вивести тільки непарні кроки. через console.log + document.write
-//
-//
-//
+console.log('-------------Task14-additional-1: Цикли-------------')
+// for (let i = 0; i < 100; i++) {
+//     if (i % 2 != 0) {
+//         console.log(`${i}`);
+//         document.write(`${i} `);
+//     }
+// }
+console.log('-------------Task15-additional-1: Цикли-------------')
 // створити масив книжок (назва, кількість сторінок, автори , жанри).
-// -знайти найбільшу книжку.
+let books = [
+    {title: 'Мистецтво війни', pageCount: 231, genre: ['philosophy'], authors: [{name: 'Сунь-цзи'}]},
+    {
+        title: 'Іди туди, де страшно. І отримаєш те, про що мрієш', pageCount: 234, genre: ['psychology'],
+        authors: [{name: 'Дж. Ловлесс'}]
+    },
+    {
+        title: 'Фактор Черчилля. Як одна людина змінила історію',
+        pageCount: 412,
+        genre: ['Biographies and memoirs', 'Memoirs'],
+        authors: [{name: 'Боріс Джонсон'}]
+    },
+    {
+        title: 'Працюючи навпаки. Інсайти та секрети від топ-менеджерів Amazon',
+        pageCount: 416,
+        genre: ['Бізнес-книги'],
+        authors: [{name: 'Колін Брайар'},
+            {name: 'Білл Карр'}]
+    },
+    {
+        title: 'Анатомія Грея', pageCount: 832, genre: ['Книги про медицину і здоров\'я'],
+        authors: [{name: 'Біліч Габріель Лазаревич'}]
+    },
+    {
+        title: 'The Martian', pageCount: 416, genre: ['Художня література'],
+        authors: [{name: 'Енді Вейр'}]
+    },
+    {
+        title: 'Looking for Alaska', pageCount: 288, genre: ['Роман'],
+        authors: [{name: 'Джон Грін'}]
+    },
+    {
+        title: 'A Clash of Kings (A Song of Ice and Fire, Book 2)', pageCount: 864, genre: ['Фентезі'],
+        authors: [{name: 'Джордж Р.Р. Мартін'}]
+    },
+    {
+        title: 'Грушевський, Скоропадський, Петлюра', pageCount: 800, genre: ['Історія України'],
+        authors: [{name: 'Данило Яневський'}]
+    },
+    {
+        title: 'Як не померти передчасно. Їжа, яка відвертає та лікує хвороби',
+        pageCount: 512,
+        genre: ['Здорове харчування', 'Дієти'],
+        authors: [{name: 'Майкл Грегер'},
+            {name: 'Джен Стоун'}]
+    },
+    {
+        title: 'Гаррі Поттер і філософський камінь. Книга 1', pageCount: 320, genre: ['Дитяче фентезі', 'Фантастика', 'Фентезі'],
+        authors: [{name: 'Джоан К. Ролінґ'}]
+    }
+]
+console.log('-------------знайти найбільшу книжку-------------')
+// - знайти найбільшу книжку
+let minPage = books[0].pageCount;
+let maxPage = 0;
+for (const book of books) {
+    if (book.pageCount > maxPage) {
+        maxPage = book.pageCount;
+    }
+    if (book.pageCount < minPage) {
+        minPage = book.pageCount;
+    } ;
+}
+for (const book of books) {
+    if (book.pageCount == maxPage) {
+        console.log('Найбільша книга ' + book.title + ' - ' + book.pageCount + ' сторінок')
+    }
+}
+console.log(minPage + ' Найменша книга');
+console.log(maxPage + ' Найбільша книга');
+console.log('-------------знайти книжку/ки з найбільшою кількістю жанрів-------------')
 // - знайти книжку/ки з найбільшою кількістю жанрів
+let maxGenre = books[0].genre.length;
+for (const book of books) {
+    if (book.genre.length > maxGenre) {
+        maxGenre = book.genre.length
+    }
+}
+for (const book of books) {
+    if (book.genre.length == maxGenre) {
+        console.log(`Найбіль жанрів - ${book.title}`)
+    }
+}
+
+console.log('-------------знайти книжку/ки з найдовшою назвою-------------')
 // - знайти книжку/ки з найдовшою назвою
+let maxLengthName = books[0].title.length;
+for (const book of books) {
+    if (book.title.length > maxLengthName){
+        maxLengthName = book.title.length;
+    }
+}
+console.log(maxLengthName);
+for (const book of books) {
+    if (book.title.length == maxLengthName) {
+        console.log(`Найдовша назва ${book.title}`)
+    }
+}
+console.log('-------------знайти книжку/ки які писали 2 автори-------------')
 // - знайти книжку/ки які писали 2 автори
+for (const book of books) {
+    if (book.authors.length == 2) {
+        console.log(book)
+    }
+}
+console.log('-------------знайти книжку/ки які писав 1 автор-------------')
 // - знайти книжку/ки які писав 1 автор
+for (const book of books) {
+    if (book.authors.length == 1) {
+        console.log(book)
+    }
+}
