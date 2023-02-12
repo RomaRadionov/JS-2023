@@ -33,33 +33,87 @@ function eachElemet(arr) {
 }
 eachElemet(arr)
 
-console.log('-------------Task5: Functions-------------');
+document.write('<div>-------------Task5: Functions-------------</div>');
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 function createP(t) {
     document.write(`<p>${t}</p>`)
 }
 createP('lorem');
 
-console.log('-------------Task6: Functions-------------');
+document.write('<div>-------------Task6: Functions-------------</div>');
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
-function createUlLi() {
-
+function createUlLi(t) {
+    let html = `
+        <ul>
+            <li>${t}</li>
+            <li>${t}</li>
+            <li>${t}</li>
+        </ul>
+    `;
+    document.write(html)
 }
+createUlLi('lorem');
 
-console.log('-------------Task7: Functions-------------');
+document.write('<div>-------------Task7: Functions-------------</div>');
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий.
 // Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+function createList(t, n) {
+    let html = ``;
+    for (let i = 0; i < n; i++) {
+        html += `<li>${t}</li>`;
+    }
+    document.write(`<ul>`)
+    document.write(html)
+    document.write(`</ul>`)
+}
+createList('lorem ipsum', 5)
 
-console.log('-------------Task8: Functions-------------');
+document.write('<div>-------------Task8: Functions-------------</div>');
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+let arr1 = [3, 54, 35, 765, 834, 2];
+function createListOfArr(arr) {
+    let html = ``;
+    for (const item of arr) {
+        html += `<li>${item}</li>`;
+    }
+    document.write(`<ul>`)
+    document.write(html)
+    document.write(`</ul>`)
+}
+createListOfArr(arr1)
 
-console.log('-------------Task9: Functions-------------');
+document.write('<div>-------------Task9: Functions-------------</div>');
 // - створити функцію яка приймає масив об'єктів з наступними полями id, name, age, та виводить їх в документ.
 // Для кожного об'єкту окремий блок.
+let users = [
+    {name: 'vasya', age: 31, id: 1},
+    {name: 'petya', age: 30, id: 2},
+    {name: 'kolya', age: 29, id: 3},
+    {name: 'olya', age: 28, id: 4},
+    {name: 'max', age: 30, id: 5},
+    {name: 'anya', age: 31, id: 6},
+    {name: 'oleg', age: 28, id: 7},
+    {name: 'andrey', age: 29, id: 8},
+    {name: 'masha', age: 30, id: 9},
+    {name: 'olya', age: 31, id: 10},
+    {name: 'max', age: 31, id: 11}
+];
+function createBlock(arr) {
+    let html = ``;
+    for (const item of arr) {
+        html += `
+            <div class="block">
+                ${item.id} - ${item.name} - ${item.age}
+            </div>`
+    }
+    document.write(`<div class="wrap">`)
+    document.write(html)
+    document.write(`</div>`)
+}
+createBlock(users);
 
 console.log('-------------Task10: Functions-------------');
 // - створити функцію яка повертає найменьше число з масиву
-let arr1 = [3, 54, 35, 765, 834, 2];
 function minNumber(n) {
     let min = n[0];
     for (const nElement of n) {
