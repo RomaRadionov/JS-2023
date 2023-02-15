@@ -1,4 +1,3 @@
-// 1 отримати масив об'єктів з endpoint'a https://jsonplaceholder.typicode.com/users
 // let userInfo = {};
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
@@ -26,6 +25,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
         }
     )
 
+// 1 отримати масив об'єктів з endpoint'a https://jsonplaceholder.typicode.com/users
 // 2 Вивести id, name всіх user в index.html. Окремий блок для кожного user.
 // 3 Додати кожному блоку кнопку/посилання,
 //   при кліку на яку відбувається перехід на сторінку user-details.html,
@@ -86,7 +86,8 @@ const closeModalDeleteWindow = () => {
 // 4 Вивести всю, без виключення, інформацію про об'єкт user на який клікнули
 // 5 Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера
 // (для получения постів используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
-//     6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра має детальну інфу про поточний пост.
+//     6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html,
+//     котра має детальну інфу про поточний пост.
 //
 //     На странице post-details.html:
 // 7 Вивести всю, без виключення, інформацію про об'єкт post на який клікнули .
