@@ -41,6 +41,7 @@ let str8 = 'Ревуть воли як ясла повні';
 function stringToArray(str) {
     return str.split(' ')
 }
+
 console.log(stringToArray(str8));
 
 console.log('-------------Task6: Array functions-------------');
@@ -56,14 +57,20 @@ console.log('-------------Task7: Array functions-------------');
 // sortNums(nums,'ascending') // [3,11,21]
 // sortNums(nums,'descending') // [21,11,3]
 let nums = [11, 21, 3];
+
 function sortNums(arr, direction) {
     if (direction === 'ascending') {
-        return  arr.sort(function(a, b){return a-b})
+        return arr.sort(function (a, b) {
+            return a - b
+        })
     }
     if (direction === 'descending') {
-        return  arr.sort(function(a, b){return b-a})
+        return arr.sort(function (a, b) {
+            return b - a
+        })
     }
 }
+
 console.log(sortNums(nums, 'descending'));
 
 console.log('-------------Task8: Array functions-------------');
@@ -76,22 +83,32 @@ let coursesAndDurationArray = [
     {title: 'FullStack', monthDuration: 7},
     {title: 'Frontend', monthDuration: 4}
 ];
+
 // -- відсортувати його за спаданням за monthDuration
 function sortMinToMax(arr) {
-    return arr.sort(function (a, b){return a.monthDuration-b.monthDuration})}
+    return arr.sort(function (a, b) {
+        return a.monthDuration - b.monthDuration
+    })
+}
+
 console.log(sortMinToMax(coursesAndDurationArray));
+
 // -- відфільтрувати , залишивши тільки курси з тривалістю понад 5 місяців
 function filterMoreFive(arr) {
-    return arr.filter(function (arr){return arr.monthDuration > 5})
+    return arr.filter(function (arr) {
+        return arr.monthDuration > 5
+    })
 }
+
 console.log(filterMoreFive(coursesAndDurationArray));
 
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
-function sortId(arr) {
-    // let res;
-    return arr;
-}
-console.log(sortId(coursesAndDurationArray));
+
+let sortId = coursesAndDurationArray.map((value, index) => {
+    return {id: index + 1, title: value.title, monthDuration: value.monthDuration}
+});
+
+console.log(sortId);
 
 console.log('-------------Task9: Array functions-------------');
 //   описати колоду карт (від 6 до туза без джокерів)
@@ -106,6 +123,12 @@ console.log('-------------Task9: Array functions-------------');
 //     value: '', // '6'-'10', 'ace','jack','queen','king','joker'
 //     color:'', // 'red','black'
 // }
+let deckOfCards = [
+    {cardSuit: ['spade', 'diamond', 'heart', 'clubs']},
+    {value: ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace']},
+    {color: ['red', 'black']}
+];
+
 
 console.log('-------------Task10: Array functions-------------');
 //     Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
@@ -115,11 +138,21 @@ console.log('-------------Task10: Array functions-------------');
 //     hearts:[],
 //     clubs:[]
 // }
+let sortOfSuits = deckOfCards.reduce((acc, value) => {
+    console.log(value);
+    if (value.value) {
+        for (let i = 0; i < value.value.length; i++) {
+            acc.spades.push(value.value[i])
+            acc.diamonds.push(value.value[i])
+            acc.hearts.push(value.value[i])
+            acc.clubs.push(value.value[i])
+        }
+    }
+    return acc
+}, {spades: [], diamonds: [], hearts: [], clubs: []});
+console.log(sortOfSuits)
 
-// console.log('-------------Task11: Array functions-------------');
-//   взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
-// --написати пошук всіх об'єктів, в який в modules є sass
-// --написати пошук всіх об'єктів, в який в modules є docker
+console.log('-------------Task11: Array functions-------------');
 let coursesArray = [
     {
         title: 'JavaScript Complex',
@@ -189,3 +222,25 @@ let coursesArray = [
         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
     }
 ];
+//   взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
+console.log('-------------написати пошук всіх об\'єктів, в який в modules є sass-------------');
+// --написати пошук всіх об'єктів, в який в modules є sass
+let searchSass = coursesArray.filter(user => {
+    for (let i = 0; i < user.modules.length; i++) {
+        if (user.modules[i] === 'sass') {
+            return user
+        }
+    }
+})
+console.log(searchSass);
+
+console.log('-------------написати пошук всіх об\'єктів, в який в modules є docker-------------');
+// --написати пошук всіх об'єктів, в який в modules є docker
+let searchDocker = coursesArray.filter(user => {
+    for (let i = 0; i < user.modules.length; i++) {
+        if (user.modules[i] === 'docker') {
+            return user
+        }
+    }
+})
+console.log(searchDocker);
