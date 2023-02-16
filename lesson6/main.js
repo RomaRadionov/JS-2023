@@ -116,7 +116,7 @@ console.log('-------------Task10: Array functions-------------');
 //     clubs:[]
 // }
 
-console.log('-------------Task11: Array functions-------------');
+// console.log('-------------Task11: Array functions-------------');
 //   взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
 // --написати пошук всіх об'єктів, в який в modules є sass
 // --написати пошук всіх об'єктів, в який в modules є docker
