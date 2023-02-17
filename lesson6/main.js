@@ -112,23 +112,89 @@ console.log(sortId);
 
 console.log('-------------Task9: Array functions-------------');
 //   описати колоду карт (від 6 до туза без джокерів)
-// - знайти піковий туз
-// - всі шістки
-// - всі червоні карти
-// - всі буби
-// - всі трефи від 9 та більше
-//
-// {
-//     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
-//     value: '', // '6'-'10', 'ace','jack','queen','king','joker'
-//     color:'', // 'red','black'
-// }
 let deckOfCards = [
-    {cardSuit: ['spade', 'diamond', 'heart', 'clubs']},
-    {value: ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace']},
-    {color: ['red', 'black']}
+    {cardSuit: 'heart', value: '6', color: 'red'},
+    {cardSuit: 'diamond', value: '6', color: 'red'},
+    {cardSuit: 'spade', value: '6', color: 'black'},
+    {cardSuit: 'clubs', value: '6', color: 'black'},
+
+    {cardSuit: 'heart', value: '7', color: 'red'},
+    {cardSuit: 'diamond', value: '7', color: 'red'},
+    {cardSuit: 'spade', value: '7', color: 'black'},
+    {cardSuit: 'clubs', value: '7', color: 'black'},
+
+    {cardSuit: 'heart', value: '8', color: 'red'},
+    {cardSuit: 'diamond', value: '8', color: 'red'},
+    {cardSuit: 'spade', value: '8', color: 'black'},
+    {cardSuit: 'clubs', value: '8', color: 'black'},
+
+    {cardSuit: 'heart', value: '9', color: 'red'},
+    {cardSuit: 'diamond', value: '9', color: 'red'},
+    {cardSuit: 'spade', value: '9', color: 'black'},
+    {cardSuit: 'clubs', value: '9', color: 'black'},
+
+    {cardSuit: 'heart', value: '10', color: 'red'},
+    {cardSuit: 'diamond', value: '10', color: 'red'},
+    {cardSuit: 'spade', value: '10', color: 'black'},
+    {cardSuit: 'clubs', value: '10', color: 'black'},
+
+    {cardSuit: 'heart', value: 'jack', color: 'red'},
+    {cardSuit: 'diamond', value: 'jack', color: 'red'},
+    {cardSuit: 'spade', value: 'jack', color: 'black'},
+    {cardSuit: 'clubs', value: 'jack', color: 'black'},
+
+    {cardSuit: 'heart', value: 'queen', color: 'red'},
+    {cardSuit: 'diamond', value: 'queen', color: 'red'},
+    {cardSuit: 'spade', value: 'queen', color: 'black'},
+    {cardSuit: 'clubs', value: 'queen', color: 'black'},
+
+    {cardSuit: 'heart', value: 'king', color: 'red'},
+    {cardSuit: 'diamond', value: 'king', color: 'red'},
+    {cardSuit: 'spade', value: 'king', color: 'black'},
+    {cardSuit: 'clubs', value: 'king', color: 'black'},
+
+    {cardSuit: 'heart', value: 'ace', color: 'red'},
+    {cardSuit: 'diamond', value: 'ace', color: 'red'},
+    {cardSuit: 'spade', value: 'ace', color: 'black'},
+    {cardSuit: 'clubs', value: 'ace', color: 'black'},
 ];
 
+console.log('-------------знайти піковий туз-------------');
+// - знайти піковий туз
+let findSpadeAce = deckOfCards.filter((item) => {
+    return item.cardSuit.includes('spade') && item.value.includes('ace');
+})
+console.log(findSpadeAce);
+
+console.log('-------------знайти всі шістки-------------');
+// - всі шістки
+let findAllSix = deckOfCards.filter((item) => {
+    return item.value.includes('6');
+})
+console.log(findAllSix);
+
+console.log('-------------знайти всі червоні карти-------------');
+// - всі червоні карти
+let findAllRedCards = deckOfCards.filter((item) => {
+    return item.color.includes('red');
+})
+console.log(findAllRedCards);
+
+console.log('-------------знайти всі буби-------------');
+// - всі буби
+let findAllDiamond = deckOfCards.filter((item) => {
+    return item.cardSuit.includes('diamond');
+})
+console.log(findAllDiamond);
+
+console.log('-------------знайти всі трефи від 9 та більше-------------');
+// - всі трефи від 9 та більше
+let findClubs = deckOfCards.filter((item) => {
+    if(item.value !== '6' && item.value !== '7' && item.value !== '8'){
+        return item.cardSuit.includes('clubs')
+    }
+});
+console.log(findClubs);
 
 console.log('-------------Task10: Array functions-------------');
 //     Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
@@ -139,20 +205,24 @@ console.log('-------------Task10: Array functions-------------');
 //     clubs:[]
 // }
 let sortOfSuits = deckOfCards.reduce((acc, value) => {
-    console.log(value);
-    if (value.value) {
-        for (let i = 0; i < value.value.length; i++) {
-            acc.spades.push(value.value[i])
-            acc.diamonds.push(value.value[i])
-            acc.hearts.push(value.value[i])
-            acc.clubs.push(value.value[i])
-        }
+    if (value.cardSuit === 'spade') {
+        acc.spades.push(value)
+    }
+    if (value.cardSuit === 'diamond') {
+        acc.diamonds.push(value)
+    }
+    if (value.cardSuit === 'heart') {
+        acc.hearts.push(value)
+    }
+    if (value.cardSuit === 'clubs') {
+        acc.clubs.push(value)
     }
     return acc
 }, {spades: [], diamonds: [], hearts: [], clubs: []});
 console.log(sortOfSuits)
 
 console.log('-------------Task11: Array functions-------------');
+//   взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
 let coursesArray = [
     {
         title: 'JavaScript Complex',
@@ -222,25 +292,27 @@ let coursesArray = [
         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
     }
 ];
-//   взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
+
 console.log('-------------написати пошук всіх об\'єктів, в який в modules є sass-------------');
 // --написати пошук всіх об'єктів, в який в modules є sass
 let searchSass = coursesArray.filter(user => {
-    for (let i = 0; i < user.modules.length; i++) {
-        if (user.modules[i] === 'sass') {
-            return user
-        }
-    }
+    return user.modules.includes('sass');
+    // for (let i = 0; i < user.modules.length; i++) {
+    //     if (user.modules[i] === 'sass') {
+    //         return user
+    //     }
+    // }
 })
 console.log(searchSass);
 
 console.log('-------------написати пошук всіх об\'єктів, в який в modules є docker-------------');
 // --написати пошук всіх об'єктів, в який в modules є docker
 let searchDocker = coursesArray.filter(user => {
-    for (let i = 0; i < user.modules.length; i++) {
-        if (user.modules[i] === 'docker') {
-            return user
-        }
-    }
+    return user.modules.includes('docker');
+    // for (let i = 0; i < user.modules.length; i++) {
+    //     if (user.modules[i] === 'docker') {
+    //         return user
+    //     }
+    // }
 })
 console.log(searchDocker);
