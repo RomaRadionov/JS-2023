@@ -84,7 +84,54 @@ console.log('-------------Task6: Constructors_class-------------');
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-//
+function Car(model, manufacturer, year, maxSpeed, engineVolume) {
+    this.model = model;
+    this.manufacturer = manufacturer;
+    this.year = year;
+    this.maxSpeed = maxSpeed;
+    this.engineVolume = engineVolume;
+    this.driver = null;
+
+    this.drive = function() {
+        console.log(`Їдемо зі швидкістю ${this.maxSpeed} на годину`);
+    };
+
+    this.info = function() {
+        console.log(`Модель: ${this.model}`);
+        console.log(`Виробник: ${this.manufacturer}`);
+        console.log(`Рік випуску: ${this.year}`);
+        console.log(`Максимальна швидкість: ${this.maxSpeed}`);
+        console.log(`Об'єм двигуна: ${this.engineVolume}`);
+        if (this.driver !== null) {
+            console.log(`Водій: ${this.driver.name}, вік: ${this.driver.age}`);
+        }
+    };
+
+    this.increaseMaxSpeed = function(newSpeed) {
+        this.maxSpeed += newSpeed;
+    };
+
+    this.changeYear = function(newValue) {
+        this.year += newValue;
+    };
+
+    this.addDriver = function (driver) {
+        this.driver = {
+            name: driver.name,
+            age: driver.age,
+        };
+    }
+}
+
+const car1 = new Car('Peugeot', '407sw', 2006, 205, 2.0);
+car1.drive();
+car1.info();
+car1.increaseMaxSpeed(25);
+car1.changeYear(2009);
+const driver = { name: 'Leanne Graham', age: 34};
+car1.addDriver(driver)
+console.log(car1.maxSpeed);
+car1.info();
 
 console.log('-------------Task7: Constructors_class-------------');
 // - (Те саме, тільки через клас)
