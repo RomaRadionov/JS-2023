@@ -85,7 +85,6 @@ console.log('-------------Task6: Constructors_class-------------');
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 //
-//
 
 console.log('-------------Task7: Constructors_class-------------');
 // - (Те саме, тільки через клас)
