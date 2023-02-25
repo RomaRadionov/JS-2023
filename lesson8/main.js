@@ -102,6 +102,9 @@ function Car(model, manufacturer, year, maxSpeed, engineVolume) {
         console.log(`Рік випуску: ${this.year}`);
         console.log(`Максимальна швидкість: ${this.maxSpeed}`);
         console.log(`Об'єм двигуна: ${this.engineVolume}`);
+        if (this.driver !== null) {
+            console.log(`Водій: ${this.driver.name}, вік: ${this.driver.age}`);
+        }
     };
 
     this.increaseMaxSpeed = function(newSpeed) {
@@ -159,6 +162,9 @@ class CarClass{
         console.log(`Рік випуску: ${this.year}`);
         console.log(`Максимальна швидкість: ${this.maxSpeed}`);
         console.log(`Об'єм двигуна: ${this.engineVolume}`);
+        if (this.driver !== null) {
+            console.log(`Водій: ${this.driver.name}, вік: ${this.driver.age}`);
+        }
     };
 
     increaseMaxSpeed (newSpeed) {
