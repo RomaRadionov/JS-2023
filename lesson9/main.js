@@ -136,15 +136,150 @@ console.log('-------------Task6: dom-------------');
 // Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей,
 // для властивості modules зробити список з елементами
 // Приклад структури знаходиться у файлі example.png який лежить в папці з поточним файлом
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+
+const wrap = document.createElement('div');
+wrap.classList.add('wrap')
+for (const item of coursesArray) {
+    const block = document.createElement('div');
+    const title = document.createElement('div');
+    const duration = document.createElement('div');
+    const monthDuration = document.createElement('div');
+    const hourDuration = document.createElement('div');
+    const modules = document.createElement('ul');
+
+    title.innerText = item.title;
+    monthDuration.innerText = `Month: ${item.monthDuration}`;
+    hourDuration.innerText = `Hour: ${item.hourDuration}`;
+    duration.append(monthDuration, hourDuration);
+
+    title.classList.add('all', 'title');
+    monthDuration.classList.add('all', 'duration');
+    hourDuration.classList.add('all', 'duration');
+    block.classList.add('item');
+    duration.classList.add('flex')
+
+    for (let i = 0; i < item.modules.length; i++) {
+        const li = document.createElement('li');
+        li.innerText = item.modules[i];
+        li.classList.add('all', 'module');
+        modules.append(li);
+        if (i % 2 === 0) {
+            li.classList.add('second')
+        }
+    }
+
+    block.append(title, duration, modules)
+
+    wrap.append(block)
+    document.body.append(wrap);
+}
 
 console.log('-------------Task7: dom-------------');
 // - Створити довільний елемент з id = text та створити кнопку.
 // Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+// const elemId = document.createElement('div');
+// const btn = document.createElement('button');
+// document.body.append(btn, elemId);
+// elemId.id = 'text';
+// elemId.innerText = 'hiddenElem'
+// btn.innerText = 'btn';
+// function hide() {
+//     elemId.classList.toggle('hidden');
+// }
+//
+// btn.addEventListener("click", hide);
+
 
 console.log('-------------Task8: dom-------------');
 // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.
 // При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи менше він ніж 18,
 // та повідомити про це користувача
+// const input = document.createElement('input');
+// const btn = document.createElement('button');
+// btn.innerText = 'btn';
+//
+// document.body.append(input, btn);
+//
+// function check() {
+//     if (input.value < 18) {
+//         input.value = '';  /*після додавання наш інпут очищається*/
+//         return alert('Вам менше 18 років!!!')
+//     }else {
+//         input.value = '';  /*після додавання наш інпут очищається*/
+//         return alert('Вам 18!!!')
+//     }
+// }
+//
+// btn.addEventListener('click', check);
 
 console.log('-------------Task9: dom-------------');
 // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вміст ячеєк.
