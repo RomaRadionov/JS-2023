@@ -42,32 +42,46 @@ console.log('-------------Task4: events-------------');
 // при завантаженні сторінки з'являються перші 10 об'єктів.
 // При натисканні next виводяться наступні 10 об'єктів
 // При натисканні prev виводяться попередні 10 об'єктів
-const items = [];
-for (let i = 1; i <= 100; i++) {
-    items.push({id: i});
-}
-
-const container = document.createElement('div');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
-document.body.append(container);
-const itemsPerPage = 10;
-let index = 1;
-const list = document.createElement('ul');
-container.append(list);
-for (let i = 0; i < 10; i++) {
-    list.innerHTML += `<li>${items[i].id}</li>`;
-}
-
-// function next() {
-//     for (let i = (index - 1) * 10; i <= index * 10; i++) {
-//         let item = items[i].id;
-//         itemsContainer.textContent = `${items[i].id}`;
-//     }
+// const items = [];
+// for (let i = 1; i <= 100; i++) {
+//     items.push({id: i});
 // }
 //
-// function prev() {
+// const container = document.createElement('div');
+// const list = document.createElement('ul');
+// const prevBtn = document.getElementById('prev-btn');
+// const nextBtn = document.getElementById('next-btn');
+// document.body.append(container);
+// const itemsPerPage = 10;
+// let currentPage = 1;
+// container.append(list);
 //
+// function start(arr, page) {
+//     list.innerHTML = '';
+//     const startIndex = (page - 1) * itemsPerPage;
+//     const endIndex = startIndex + itemsPerPage;
+//     const pageData = arr.slice(startIndex, endIndex);
+//
+//     pageData.forEach((item) => {
+//         const listItem = document.createElement('li');
+//         listItem.textContent = `${item.id}`;
+//         list.appendChild(listItem);
+//     });
+// }
+//
+// start(items, currentPage);
+//
+// function next() {
+//     if (currentPage < 10) {
+//         currentPage++;
+//         start(items, currentPage);
+//     }
+// }
+// function prev() {
+//     if (currentPage > 0 && currentPage !== 1) {
+//         currentPage--;
+//         start(items, currentPage);
+//     }
 // }
 //
 // nextBtn.addEventListener('click', next);
