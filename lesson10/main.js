@@ -19,6 +19,17 @@ form.onsubmit = function (e) {
 
 console.log('-------------Task2: events-------------');
 // Є сторінка, на якій є блок, я кому знаходиться цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+const numberBlock = document.getElementById("number-block");
+let number = parseInt(numberBlock.textContent);
+let newNumber;
+let localNumber = JSON.parse(localStorage.getItem('number'));
+if (!localNumber) {
+    localStorage.setItem('number', JSON.stringify(number));
+}else {
+    newNumber = parseInt(localStorage.getItem('number')) + 1;
+    numberBlock.innerText = newNumber;
+    localStorage.setItem('number', JSON.stringify(newNumber));
+}
 
 console.log('-------------Task3: events-------------');
 // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховище, в масив sessions зберігається
