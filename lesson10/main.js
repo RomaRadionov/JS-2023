@@ -75,7 +75,6 @@ start(items, currentPage);
 
 //Рахуємо скільки десятків має масив і округляємо до більшого
 let ten = Math.ceil(items.length / 10);
-console.log(ten);
 
 function next() {
     if (currentPage < ten) {
